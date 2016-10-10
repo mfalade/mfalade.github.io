@@ -1,0 +1,75 @@
+%sectionSettings
+    vertical-align: middle
+    text-align: center
+
+%logoWidth
+    width: $logoWidth
+
+%sectionPadding
+    padding: 60px
+
+.aboutMeLogoHolder,
+.headerLogo
+    @extend %logoWidth
+
+.aboutMeLogoHolder
+    margin: 12px auto
+
+img
+    width: 100%
+
+#heroSection
+    @extend %sectionSettings
+    background: #121212 url("http://res.cloudinary.com/doy1ofzki/image/upload/v1476029963/workstations_kok2ff.jpg") no-repeat 50% 100%
+    background-size: cover
+    height: 400px
+    color: #FFFFFF
+
+
+
+#aboutMe
+    @extend %sectionSettings
+    @extend %sectionPadding
+    background: $white
+    height: 100%
+    display: block
+    border-top: 1px solid $grey
+    border-bottom: 1px solid $grey
+    .aboutMeText
+        font-size: 12px
+        color: $textColor
+        width: 50%
+        margin: 40px auto
+
+#offerings
+    @extend %sectionPadding
+    background: $greyBgColor
+    height: 100%
+
+    .backgroundBlend
+        background: #F0F0F0
+        padding: 40px
+
+#skills,
+#portfolio
+    @extend %sectionSettings
+    padding: 40px 60px
+
+    #skillSlider,
+    #portfolioSlider
+        margin: 50px auto 20px
+
+    #skillSlider
+        .row
+            div.outer
+                border-left: 1px solid $grey
+
+            div:first-child
+                border-left: none
+
+.paddingRight30
+    padding-right: 30px
+
+#getInTouch
+    p
+        font-size: 12px

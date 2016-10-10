@@ -1,0 +1,52 @@
+@import abstracts/_variables
+
+// ---------------
+.fancy
+    line-height: 0.5
+    text-align: center
+    display: inline-block
+    position: relative
+
+    &:before,
+    &:after
+        content: ""
+        position: absolute
+        height: 1px
+        border-bottom: 1px solid #B7C1C5
+        border-top: 1px solid #B7C1C5
+        top: 0
+        width: 100px
+
+    &:before
+        right: 100%
+        margin-right: 20px
+
+    &:after
+        left: 100%
+        margin-left: 20px
+
+// ----------------
+.fancyHeader
+    background-color: #2df2a8; /* same as link color */
+    display: block;
+    margin: 10px auto;
+    height: 3px;
+    width: 40px;
+    padding: 0;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+
+
+// -----------------------
+.card
+    display: block!important
+    background: #FFFFFF
+    color: #888
+    width: 100%!important
+    height: 100%
+    padding: 30px 25px 50px !important
+    border: 1px solid $grey
+    border-radius: 4px
+
+    h5
+        color: $blackLighter
