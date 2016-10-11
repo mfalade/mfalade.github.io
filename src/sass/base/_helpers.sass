@@ -1,12 +1,6 @@
 .center
     text-align: center
 
-.vCentered
-    display: flex
-    justify-content: center
-    &>*
-        align-self: center
-
 .hCentered
     text-align: center
 
@@ -29,6 +23,19 @@
 .whiteBackground
     background: #FFFFFF;
 
-.sidePadding200
-    padding-right: 200px
-    padding-left: 200px
+.vCentered
+    display: flex
+    justify-content: center
+    &>*
+        align-self: center
+
+
+@media only screen and (min-width : 992px)
+    .sidePaddinglg
+        padding-right: 150px
+        padding-left: 150px
+
+@media only screen and (min-width : 480px) and (max-width : 768px)
+    .sidePaddinglg
+        padding-right: 50px
+        padding-left: 50px

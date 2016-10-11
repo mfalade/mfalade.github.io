@@ -13,7 +13,7 @@ html(lang=en)
     body
         header
             .navbar.navbar-default.navbar-fixed-top
-                .container-fluid
+                .container
                     .navbar-header
                         a.navbar-brand.headerLogo(href="")
                             img(alt="Mayowa Falade" src="assets/images/logo.png")
@@ -26,7 +26,7 @@ html(lang=en)
 
         section
             #aboutMe.vCentered
-                div.aboutMeLogoHolder
+                .aboutMeLogoHolder
                     img(src="assets/images/logo_inverted.png")
                 h4.font1.fancy A LITTLE ABOUT ME
                 .aboutMeText
@@ -34,16 +34,16 @@ html(lang=en)
 
         section
             #offerings
-                .container.backgroundBlend
-                    .row.hCentered.vCentered 
-                        .col-md-4.col-sm-4
+                .backgroundBlend
+                    .row.hCentered 
+                        .col-lg-4.col-md-4.col-sm-12
                             .card
                                 h5 Web Design
                                     span.fancyHeader
                                 p.small This is the key to the kingdom and in that kindgom, there is this cute little girl with no head.
                                 p.small Yes, I mean it when I say this.. Call it whatever you want and tell it wherever you go, but lets get one thing straight. I'm not kidding about whooping your ass
                                 p.small Yes, I mean it when I say this.. Call it whatever you want and tell it wherever you go, but lets get one thing straight. I'm not kidding about whooping your ass
-                        .col-md-4.col-sm-4
+                        .col-lg-4.col-md-4.col-sm-12
                             .card
                                 h5 Web Development
                                     span.fancyHeader
@@ -51,7 +51,7 @@ html(lang=en)
                                 p.small Yes, I mean it when I say this.. Call it whatever you want and tell it wherever you go, but lets get one thing straight. I'm not kidding about whooping your ass
                                 p.small Yes, I mean it when I say this.. Call it whatever you want and tell it wherever you go, but lets get one thing straight. I'm not kidding about whooping your ass
 
-                        .col-md-4.col-sm-4
+                        .col-lg-4.col-md-4.col-sm-12
                                 .card
                                     h5 Desktop Apps
                                         span.fancyHeader
@@ -61,101 +61,101 @@ html(lang=en)
 
         section.whiteBackground
             #skills
-                .container.text-center
+                .text-center
                     h3.headerPadding Proficiency
                         span.fancyHeader
                     #skillSlider
-                        .row.vCentered
-                            .col-lg-4.col-xsm-12.paddingRight30.outer
-                                ul
-                                    li
-                                        .row.vCentered
-                                            .col-lg-4
-                                                p Python
-                                            .col-lg-8
-                                                .progress
-                                                    .progress-bar(role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;")
-                                    li
-                                        .row.vCentered
-                                            .col-lg-4
-                                                p Flask
-                                            .col-lg-8
-                                                .progress
-                                                    .progress-bar(role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;")
-                                    li
-                                        .row.vCentered
-                                            .col-lg-4
-                                                p Django
-                                            .col-lg-8
-                                                .progress
-                                                    .progress-bar(role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;")
-
-                            .col-lg-4.col-xsm-12.paddingRight30.outer
+                        .row.responsiveVCentered
+                            .col-lg-4.col-md-4.col-sm-12.paddingRight30.outer
                                 ul
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4
+                                                p Python
+                                            .col-lg-8.col-xs-8
+                                                .progress
+                                                    .progress-bar(role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;")
+                                    li
+                                        .row
+                                            .col-lg-4.col-xs-4
+                                                p Flask
+                                            .col-lg-8.col-xs-8
+                                                .progress
+                                                    .progress-bar(role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;")
+                                    li
+                                        .row
+                                            .col-lg-4.col-xs-4
+                                                p Django
+                                            .col-lg-8.col-xs-8
+                                                .progress
+                                                    .progress-bar(role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;")
+
+                            .col-lg-4.col-md-4.col-sm-12.paddingRight30.outer
+                                ul
+                                    li
+                                        .row
+                                            .col-lg-4.col-xs-4
                                                 p Javascript
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4
                                                 p ReactJS
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4
                                                 p NodeJS
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4
                                                 p ExpressJS
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;")
 
-                            .col-lg-4.col-xsm-12.outer
+                            .col-lg-4.col-md-4.col-sm-12.outer
                                 ul
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4  
                                                 p HTML/CSS
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4  
                                                 p Test Driven Development
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4  
                                                 p Databases
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;")
                                     li
                                         .row
-                                            .col-lg-4
+                                            .col-lg-4.col-xs-4  
                                                 p DevOps
-                                            .col-lg-8
+                                            .col-lg-8.col-xs-8
                                                 .progress
                                                     .progress-bar(role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;")
 
         
         section.greyBackground
             #portfolio
-                .container.text-center
+                .text-center
                     h3.headerPadding Portfolio
                         span.fancyHeader
                     #portfolioSlider
@@ -195,33 +195,33 @@ html(lang=en)
                     span.fancyHeader
                     br
                     br
-                .row.sidePadding200
-                    .col-lg-4
+                .row.sidePaddinglg
+                    .col-lg-4.col-sm-4
                         i.material-icons email
                         p falademayowa240@gmail.com
-                    .col-lg-4
+                    .col-lg-4.col-sm-4
                         i.material-icons phonelink_ring
                         p +2348037219945
-                    .col-lg-4
+                    .col-lg-4.col-sm-4
                         i.material-icons group_add
                         p linkedin
 
                 
-                div.sidePadding200
+                div.sidePaddinglg
                     br
                     br
                     br                    
                     form
-                        .row
-                            .col-lg-6.form-group
+                        .row.form-group
+                            .col-lg-6.col-sm-6.col-xs-12
                                 input.form-control(type="text" placeholder="Title of Message")
                                 br
                                 input.form-control(type="text" placeholder="Your Name")
                                 br
                                 input.form-control(placeholder="Contact")
                                 br
-                            .col-lg-6
-                                textarea.form-control(placeholder="Leave a messge" rows="6")
+                            .col-lg-6.col-sm-6.col-xs-12
+                                textarea.form-control(placeholder="Leave a message ..." rows="6")
                         .row
                             col-lg-12
                                 button.btn.btn-default.customBtn(type="button") Submit

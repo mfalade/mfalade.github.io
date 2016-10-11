@@ -52,12 +52,6 @@ p {
 .center {
   text-align: center; }
 
-.vCentered {
-  display: flex;
-  justify-content: center; }
-  .vCentered > * {
-    align-self: center; }
-
 .hCentered {
   text-align: center; }
 
@@ -79,9 +73,21 @@ p {
 .whiteBackground {
   background: #FFFFFF; }
 
-.sidePadding200 {
-  padding-right: 200px;
-  padding-left: 200px; }
+.vCentered {
+  display: flex;
+  justify-content: center; }
+  .vCentered > * {
+    align-self: center; }
+
+@media only screen and (min-width: 992px) {
+  .sidePaddinglg {
+    padding-right: 150px;
+    padding-left: 150px; } }
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .sidePaddinglg {
+    padding-right: 50px;
+    padding-left: 50px; } }
 
 * {
   margin: 0;
@@ -275,3 +281,70 @@ img {
 
 #getInTouch p {
   font-size: 12px; }
+
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  body {
+    display: block; } }
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  body {
+    display: block; } }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  body {
+    display: block; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .responsiveVCentered {
+    display: flex;
+    justify-content: center; }
+    .responsiveVCentered > * {
+      align-self: center; } }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  body {
+    display: block; } }
+
+/*==========  Non-Mobile First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  body {
+    display: block; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  div.outer {
+    border: none !important; } }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  #aboutMe,
+  #offerings {
+    padding: 20px; } }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  #aboutMe,
+  #offerings {
+    padding: 0; }
+  #skills {
+    padding: 40px; }
+  .fancy:before, .fancy:after {
+    width: 60px; }
+  #aboutMe {
+    padding-top: 20px; }
+  img {
+    width: 80%; }
+  .paddingRight30 {
+    padding: 0; } }
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  body {
+    display: block; } }
