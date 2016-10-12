@@ -82,6 +82,9 @@ p {
 .green {
   color: #218740; }
 
+a.green:hover {
+  color: #2df2a8; }
+
 .lightGreen {
   color: #2df2a8; }
 
