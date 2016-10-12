@@ -79,6 +79,9 @@ p {
   .vCentered > * {
     align-self: center; }
 
+.green {
+  color: #218740; }
+
 @media only screen and (min-width: 992px) {
   .sidePaddinglg {
     padding-right: 150px;
@@ -251,7 +254,7 @@ img {
   #aboutMe .aboutMeText {
     font-size: 12px;
     color: #918F8F;
-    width: 50%;
+    width: 45%;
     margin: 40px auto; }
 
 #offerings {
