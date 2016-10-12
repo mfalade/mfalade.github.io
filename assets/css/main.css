@@ -82,6 +82,9 @@ p {
 .green {
   color: #218740; }
 
+.lightGreen {
+  color: #2df2a8; }
+
 @media only screen and (min-width: 992px) {
   .sidePaddinglg {
     padding-right: 150px;
@@ -181,16 +184,11 @@ h1 {
   margin-bottom: 2em;
   text-shadow: 0px 2px 0px #000000; }
 
-.slick-slider div {
-  margin: 0 10px; }
-  .slick-slider div img {
-    min-height: 200px;
-    width: 100%; }
+.owl-wrapper {
+  vertical-align: middle; }
 
-.slick-arrow {
-  font-size: 40px; }
-  .slick-arrow:hover {
-    cursor: pointer; }
+.owl-item div {
+  margin: 0 5px; }
 
 .navbar-default {
   background: transparent;
@@ -325,6 +323,10 @@ img {
   div.outer {
     border: none !important; } }
 
+@media only screen and (max-width: 900px) {
+  #heroSection {
+    background: #121212 url("https://dppg6pot5kqvr.cloudfront.net/ui-assets/background_mobile.jpg") no-repeat 50% 0; } }
+
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   #aboutMe,
@@ -342,8 +344,8 @@ img {
     width: 60px; }
   #aboutMe {
     padding-top: 20px; }
-  img {
-    width: 80%; }
+  .logo2 {
+    width: 60% !important; }
   .paddingRight30 {
     padding: 0; } }
 

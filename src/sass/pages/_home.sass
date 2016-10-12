@@ -117,6 +117,11 @@ img
     div.outer
         border: none!important
 
+// Custom width to accomodate for nice rendering of hero image and text-align
+@media only screen and (max-width : 900px)
+    #heroSection
+        background: #121212 url("https://dppg6pot5kqvr.cloudfront.net/ui-assets/background_mobile.jpg") no-repeat 50% 0
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
     #aboutMe,
@@ -137,8 +142,8 @@ img
             width: 60px
     #aboutMe
         padding-top: 20px
-    img
-        width: 80%
+    .logo2
+        width: 60%!important
     .paddingRight30
         padding: 0
 
