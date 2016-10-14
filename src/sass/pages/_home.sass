@@ -77,20 +77,21 @@ img
 
 /*==========  Mobile First Method  ==========*/
 
-/* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px)
     body
         display: block
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) 
-    body
-        display: block
+@media only screen and (min-width : 480px) and (max-width: 768px)
+    #aboutMe
+        padding-top: 20px
+        .aboutMeText
+            width: 50%
 
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-    body
-        display: block
+@media only screen and (min-width : 768px) and (max-width : 992px)
+    #aboutMe
+        padding-top: 20px
+        .aboutMeText
+            width: 60%
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
@@ -142,6 +143,8 @@ img
             width: 60px
     #aboutMe
         padding-top: 20px
+        .aboutMeText
+            width: 70%
     .logo2
         width: 60%!important
     .paddingRight30
