@@ -219,7 +219,11 @@ footer .primary {
 
 footer .secondary {
   background: #121212;
-  height: 60px;
+  height: 65px;
+  color: #7d7b7b; }
+
+footer .social a {
+  font-size: 14px;
   color: #7d7b7b; }
 
 #heroSection, #aboutMe, #skills,
@@ -285,6 +289,24 @@ img {
 
 #getInTouch p {
   font-size: 12px; }
+
+.fa {
+  transition: all ease-in-out .25s; }
+
+.fa-facebook:hover {
+  color: #3b5998; }
+
+.fa-twitter:hover {
+  color: #55acee; }
+
+.fa-instagram:hover {
+  color: #e95950; }
+
+.fa-linkedin:hover {
+  color: #007bb5; }
+
+.fa-snapchat-ghost:hover {
+  color: #fffc00; }
 
 /*==========  Mobile First Method  ==========*/
 @media only screen and (min-width: 320px) {

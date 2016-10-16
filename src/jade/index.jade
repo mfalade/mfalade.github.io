@@ -32,6 +32,7 @@ html(lang=en)
 
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+        script(src="https://use.fontawesome.com/85b9a1a575.js")
     body
         header
             .navbar.navbar-default.navbar-fixed-top
@@ -263,7 +264,26 @@ html(lang=en)
                                 button.btn.btn-default.customBtn(type="button") Submit
 
             .secondary.vCentered
-                p &copy; mayowafalade 2016
+                .social
+                    .row
+                        .col-lg-offset-1.col-lg-2.col-xs-offset-1.col-xs-2
+                            a(href="https://www.facebook.com/falade.mayor" target="_blank")
+                                i.fa.fa-facebook(aria-hidden="true")
+                        .col-lg-2.col-xs-2
+                            a(href="https://twitter.com/mayor_suave" target="_blank")
+                                i.fa.fa-twitter(aria-hidden="true")
+                        .col-lg-2.col-xs-2
+                            a(href="https://www.instagram.com/iam.mayor/" target="_blank")
+                                i.fa.fa-instagram(aria-hidden="true")
+                        .col-lg-2.col-xs-2
+                            a(href="https://ng.linkedin.com/in/falademayowa" target="_blank")
+                                i.fa.fa-linkedin(aria-hidden="true")
+                        .col-lg-2.col-xs-2
+                            a(href="https://www.snapchat.com/mayor_ace" target="_blank")
+                                i.fa.fa-snapchat-ghost(aria-hidden="true")
+                    .row
+                        .col-lg-12.col-xs-12
+                            p &copy; Mayowa Falade 2016
 
         script(src="dist/js/sliderEngine.js")
         script(src="dist/js/sliderInit.js")
