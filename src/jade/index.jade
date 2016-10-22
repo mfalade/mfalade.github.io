@@ -250,18 +250,18 @@ html(lang=en)
                     form
                         .row.form-group
                             .col-lg-6.col-sm-6.col-xs-12
-                                input.form-control(type="text" placeholder="Title of Message")
+                                input.form-control#messageTitle(type="text" placeholder="Title of Message")
                                 br
-                                input.form-control(type="text" placeholder="Your Name")
+                                input.form-control#messageSender(type="text" placeholder="Your Name")
                                 br
-                                input.form-control(placeholder="Contact")
+                                input.form-control#senderContact(placeholder="Contact (email / mobile number)")
                                 br
                             .col-lg-6.col-sm-6.col-xs-12
-                                textarea.form-control(placeholder="Leave a message ..." rows="6")
+                                textarea.form-control#messageBody(placeholder="Leave a message ..." rows="6")
                         .row
                             col-lg-12
                                 br
-                                button.btn.btn-default.customBtn(type="button") Submit
+                                button.btn.btn-default.customBtn#submitButton(type="button") Submit
 
             .secondary.vCentered
                 .social
@@ -287,4 +287,4 @@ html(lang=en)
 
         script(src="dist/js/sliderEngine.js")
         script(src="dist/js/sliderInit.js")
-        script(src="dist/js/main.js")
+        script(src="dist/js/build.js")

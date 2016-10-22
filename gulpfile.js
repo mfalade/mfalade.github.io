@@ -1,52 +1,67 @@
 'use strict';
 
-var gulp = require('gulp'),
-    path = require('path'),
-    jade = require('gulp-jade'),
-    sass = require('gulp-sass'),
-    babel = require('gulp-babel'),
-    browserSync = require('browser-sync').create();
+const fs = require('fs');
+const gulp = require('gulp');
+const path = require('path');
+const jade = require('gulp-jade');
+const sass = require('gulp-sass');
+const babelify = require('babelify');
+const watchify = require('watchify');
+const buffer = require('vinyl-buffer');
+const plumber = require('gulp-plumber');
+const browserify = require('browserify');
+const sourcemaps = require('gulp-sourcemaps');
+const source = require('vinyl-source-stream');
+const browserSync = require('browser-sync').create();
 
-var source_files = {
+const source_files = {
     sass: './src/sass/**/*.sass',
     jade: './src/jade/**/*.jade',
-    scripts: './src/scripts/*.js'
+    scripts: './src/scripts/*.js',
+    jsEntry: './src/scripts/index.js'
 };
 
-var output_files = {
+const output_files = {
     html: './',
     css: './dist/css/',
-    js: './dist/js/build.js'
+    js: './dist/js'
 };
 
 
-gulp.task('jade', function () {
-    var locals = {};
+gulp.task('jade', () => {
+    let locals = {};
     gulp.src(source_files.jade)
+        .pipe(plumber())
         .pipe(jade({ locals: locals }))
         .pipe(gulp.dest(output_files.html))
         .pipe(browserSync.stream());
 });
 
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
     return gulp.src(source_files.sass)
+        .pipe(plumber())
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(output_files.css))
         .pipe(browserSync.stream());
 });
 
 
-gulp.task('babelify', function () {
-    return gulp.src(source_files.scripts)
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(gulp.dest('dist/js'));
+gulp.task('scripts', function () {
+    return browserify({entries: source_files.jsEntry, debug: true})
+        .transform("babelify", {presets: ["es2015"]})
+        .bundle()
+        .on('error', (err) => { console.error(err); })
+        .pipe(source('build.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(browserSync.stream());
 });
 
 
-gulp.task('serve', ['sass', 'jade', 'babelify'], function () {
+gulp.task('serve', ['sass', 'jade', 'scripts'], () => {
 
     browserSync.init({
         server: "./"
@@ -54,7 +69,7 @@ gulp.task('serve', ['sass', 'jade', 'babelify'], function () {
 
     gulp.watch(source_files.jade, ['jade']);
     gulp.watch(source_files.sass, ['sass']);
-    gulp.watch(source_files.scripts, ['babelify']);
+    gulp.watch(source_files.scripts, ['scripts']);
     gulp.watch('./index.html').on('change', browserSync.reload);
 });
 
