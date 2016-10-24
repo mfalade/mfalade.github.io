@@ -35,14 +35,18 @@ $(function () {
     senderContact.val(emptyString);
   };
 
-  var flashNotification = function flashNotification(message) {
-    _notifier2.default.showNotification();
+  var flashNotification = function flashNotification(response) {
+    if (!response.isGood) {
+      _notifier2.default.showNotification(response.summary).chill(5000).hideNotification();
+      return;
+    }
+    _notifier2.default.showNotification('Sending ...');
     setTimeout(function () {
       clearInputFields();
       setTimeout(function () {
-        _notifier2.default.switchContent(message).chill(1000).hideNotification();
+        _notifier2.default.switchContent(response.summary).chill(1000).hideNotification();
       }, 1000);
-    }, 1500);
+    }, 1000);
   };
 
   submitButton.on('click', function () {
@@ -53,7 +57,7 @@ $(function () {
 });
 
 },{"./lib/dispatcher":2,"./lib/notifier":3}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -71,22 +75,29 @@ var Dispatcher = function () {
   }
 
   _createClass(Dispatcher, [{
-    key: 'dispatch',
+    key: "dispatch",
     value: function dispatch(message) {
-      if (this.validate(message)) {
-        console.log('validated message');
+      var verdict = this.validate(message);
+      if (verdict.isGood) {
+        return verdict;
       }
-      return this.notify('Message sent.');
+      return verdict;
     }
   }, {
-    key: 'validate',
+    key: "validate",
     value: function validate(message) {
-      return true;
-    }
-  }, {
-    key: 'notify',
-    value: function notify(notification) {
-      return notification;
+      var verdict = {
+        isGood: true,
+        summary: "Message Sent."
+      };
+      for (var field in message) {
+        if (!message[field] || !message[field].length) {
+          verdict.isGood = false;
+          verdict.summary = 'Please fill out the required fields.';
+          break;
+        }
+      }
+      return verdict;
     }
   }]);
 
@@ -96,7 +107,7 @@ var Dispatcher = function () {
 exports.default = new Dispatcher();
 
 },{}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -106,49 +117,49 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Preloader = function () {
-  function Preloader() {
-    _classCallCheck(this, Preloader);
+var Notifier = function () {
+  function Notifier() {
+    _classCallCheck(this, Notifier);
 
-    this.preloader = $('#preloader');
-    this.preloader.hide();
+    this.notification = $('#notification');
+    this.notification.hide();
+    this.timeOutDuration = 2000;
   }
 
-  _createClass(Preloader, [{
-    key: 'showNotification',
-    value: function showNotification() {
-      this.preloader.text('Sending ...');
-      this.preloader.show();
+  _createClass(Notifier, [{
+    key: "showNotification",
+    value: function showNotification(message) {
+      this.notification.text(message);
+      this.notification.show();
+      return this;
     }
   }, {
-    key: 'hideNotification',
+    key: "hideNotification",
     value: function hideNotification() {
       var _this = this;
 
       setTimeout(function () {
-        _this.preloader.fadeOut("slow");
-      }, 2000);
+        _this.notification.fadeOut("slow");
+      }, this.timeOutDuration);
     }
   }, {
-    key: 'chill',
-    value: function chill(forAWhile) {
-      setTimeout(function () {
-        // I'm just here chillin'
-      }, forAWhile);
+    key: "chill",
+    value: function chill(newDuration) {
+      this.timeOutDuration = newDuration;
       return this;
     }
   }, {
-    key: 'switchContent',
+    key: "switchContent",
     value: function switchContent(newContent) {
-      this.preloader.text(newContent);
+      this.notification.text(newContent);
       return this;
     }
   }]);
 
-  return Preloader;
+  return Notifier;
 }();
 
-exports.default = new Preloader();
+exports.default = new Notifier();
 
 },{}]},{},[1])
 

@@ -23,14 +23,18 @@ $(() => {
     senderContact.val(emptyString);
   };
 
-  const flashNotification = (message) => {
-    notifier.showNotification();
+  const flashNotification = (response) => {
+    if (!response.isGood) {
+      notifier.showNotification(response.summary).chill(5000).hideNotification();
+      return;
+    }
+    notifier.showNotification('Sending ...');
     setTimeout(() => {
       clearInputFields();
       setTimeout(() => {
-        notifier.switchContent(message).chill(1000).hideNotification();
+        notifier.switchContent(response.summary).chill(1000).hideNotification();
       }, 1000);
-    }, 1500);
+    }, 1000);
   }
 
   submitButton.on('click', () => {

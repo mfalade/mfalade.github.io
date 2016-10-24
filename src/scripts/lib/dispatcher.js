@@ -3,16 +3,25 @@ class Dispatcher {
     this.notifications = [];
   }
   dispatch(message) {
-    if (this.validate(message)) {
-      console.log('validated message');
+    let verdict = this.validate(message);
+    if (verdict.isGood) {
+      return verdict;
     }
-    return this.notify('Message sent.');
+    return verdict;    
   }
   validate(message) {
-    return true;
-  }
-  notify(notification) {
-    return notification;
+    let verdict = {
+      isGood: true,
+      summary: "Message Sent."
+    };
+    for (let field in message) {
+      if (!message[field] || !message[field].length) {
+        verdict.isGood = false;
+        verdict.summary = 'Please fill out the required fields.'
+        break;
+      }
+    }
+    return verdict;
   }
 }
 

@@ -293,17 +293,17 @@ html(lang=en)
                     form
                         .row.form-group
                             .col-lg-6.col-sm-6.col-xs-12
-                                input.form-control#messageTitle(type="text" placeholder="Title of Message")
+                                input.form-control#messageTitle(type="text" placeholder="Title of Message*")
                                 br
-                                input.form-control#messageSender(type="text" placeholder="Your Name")
+                                input.form-control#messageSender(type="text" placeholder="Your Name*")
                                 br
-                                input.form-control#senderContact(placeholder="Contact (email / mobile number)")
+                                input.form-control#senderContact(placeholder="Contact (email / mobile number)*")
                                 br
                             .col-lg-6.col-sm-6.col-xs-12
-                                textarea.form-control#messageBody(placeholder="Leave a message ..." rows="6")
+                                textarea.form-control#messageBody(placeholder="Message*" rows="6")
                         .row
                             col-lg-12
-                                p#preloader
+                                p#notification
                                 br
                                 button.btn.btn-default.customBtn#submitButton(type="button") Send Message
 

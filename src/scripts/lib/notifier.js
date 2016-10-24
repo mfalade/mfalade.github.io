@@ -1,27 +1,27 @@
-class Preloader {
+class Notifier {
   constructor() {
-    this.preloader = $('#preloader');
-    this.preloader.hide();
+    this.notification = $('#notification');
+    this.notification.hide();
+    this.chillDuration = 2000;
   }
-  showNotification() {
-    this.preloader.text('Sending ...');
-    this.preloader.show();
+  showNotification(message) {
+    this.notification.text(message);
+    this.notification.show();
+    return this;
   }
   hideNotification() {
     setTimeout(() => {
-      this.preloader.fadeOut("slow");
-    }, 2000);
+      this.notification.fadeOut("slow");
+    }, this.chillDuration);
   }
-  chill(forAWhile) {
-    setTimeout(() => {
-      // I'm just here chillin'
-    }, forAWhile);
+  chill(newDuration) {
+    this.chillDuration = newDuration;
     return this;
   }
   switchContent(newContent) {
-    this.preloader.text(newContent);
+    this.notification.text(newContent);
     return this;
   }
 }
 
-export default new Preloader();
+export default new Notifier();
