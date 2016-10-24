@@ -1,4 +1,5 @@
-import Dispatcher from './lib/dispatcher';
+import dispatcher from './lib/dispatcher';
+import notifier from './lib/notifier';
 
 $(() => {
   let submitButton = $('#submitButton');
@@ -6,8 +7,7 @@ $(() => {
   let messageTitle = $('#messageTitle');
   let messageSender = $('#messageSender');
   let senderContact = $('#senderContact');
-  let dispatcher = new Dispatcher();
-
+  
   const compileMessage = () => ({
     messageBody: messageBody.val(),
     messageTitle: messageTitle.val(),
@@ -15,7 +15,27 @@ $(() => {
     senderContact: senderContact.val()
   });  
 
+  const clearInputFields = () => {
+    const emptyString = '';
+    messageBody.val(emptyString)
+    messageTitle.val(emptyString) ;
+    messageSender.val(emptyString);
+    senderContact.val(emptyString);
+  };
+
+  const flashNotification = (message) => {
+    notifier.showNotification();
+    setTimeout(() => {
+      clearInputFields();
+      setTimeout(() => {
+        notifier.switchContent(message).chill(1000).hideNotification();
+      }, 1000);
+    }, 1500);
+  }
+
   submitButton.on('click', () => {
-    dispatcher.dispatch(compileMessage());
+    let compiledMessage = compileMessage();
+    let response = dispatcher.dispatch(compiledMessage);
+    flashNotification(response);
   });
 });

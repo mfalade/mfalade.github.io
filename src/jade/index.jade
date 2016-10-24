@@ -28,7 +28,6 @@ html(lang=en)
         link(rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:400,700,300")
         link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
         link(rel="stylesheet" type="text/css" href="./dist/css/main.css")
-        link(rel="stylesheet" type="text/css" href="./dist/css/slider_styling.css")
 
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
@@ -204,26 +203,70 @@ html(lang=en)
                         span.fancyHeader
                     #portfolioSlider.owl-carousel.greyBackground
                         div
-                          a(href="https://easywaya-staging.herokuapp.com/" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/easywaya_50.png' alt="Easywaya project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Easywaya
+                                        p Easywaya is an online money transfer solution which enables you easily send and receive money online
+                                .col-lg-6.col-sm-6
+                                    a(href="https://easywaya-staging.herokuapp.com/" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/easywaya_50.png' alt="Easywaya project image")
                         div
-                          a(href="https://github.com/mfalade/checkoff" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/checkoff_50.png' alt="Checkoff project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Checkoff
+                                        p A desktop application built with Electron which combines a todo list and a note pad in the same application
+                                        p It is compatible with both Windows and Mac computers
+                                .col-lg-6.col-sm-6
+                                    a(href="https://github.com/mfalade/checkoff" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/checkoff_50.png' alt="Checkoff project image")
                         div
-                          a(href="http://lekkirepublic.com/" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/lekkirepublic_50.png' alt="Lekki Republic project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Lekki Republic
+                                        p Discover the Island! Explore Lekki, Ikoyi, V.I and Ajah using your one and only, lekkirepublic
+                                        p This app allows you to easily locate the latest hot spots, things to do, events to attend or places to eat
+                                .col-lg-6
+                                    a(href="http://lekkirepublic.com/" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/lekkirepublic_50.png' alt="Lekki Republic project image")
                         div
-                          a(href="https://youtubetomp3ly.herokuapp.com/" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/youtubeconverter_1_50.png' alt="Youtubely project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Youtubetomp3ly
+                                        p A lightning fast app that allows you to easily download youtube videos in mp3 format
+                                .col-lg-6
+                                    a(href="https://youtubetomp3ly.herokuapp.com/" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/youtubeconverter_1_50.png' alt="Youtubely project image")
                         div
-                          a(href="http://troupon-staging.herokuapp.com/" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/troupon_50.png' alt="Troupon project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Troupon
+                                        p An Andela simulations project with which you can find and create discounted local deals
+                                .col-lg-6.col-sm-6
+                                    a(href="http://troupon-staging.herokuapp.com/" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/troupon_50.png' alt="Troupon project image")
                         div
-                          a(href="http://mayowafalade.com" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/portfolio_50.png' alt="Portfolio project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 mayowafalade.com
+                                        p I'm not sure how this got here
+                                .col-lg-6
+                                    a(href="http://mayowafalade.com" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/portfolio_50.png' alt="Portfolio project image")
                         div
-                          a(href="http://cloud-xchange.herokuapp.com/" target="_blank")
-                            img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/cloudxchange_50.png' alt="Cloudxchange project image")
+                            .row.vCentered
+                                .col-lg-6.col-sm-6
+                                    div.sidePaddinglg
+                                        h3 Cloudexchange
+                                        p A simple app with which you can upload and share cool resources online
+                                .col-lg-6.col-sm-6
+                                    a(href="http://cloud-xchange.herokuapp.com/" target="_blank")
+                                        img(src='https://dppg6pot5kqvr.cloudfront.net/ui-assets/cloudxchange_50.png' alt="Cloudxchange project image")
                                   
 
         footer.hCentered
@@ -260,8 +303,9 @@ html(lang=en)
                                 textarea.form-control#messageBody(placeholder="Leave a message ..." rows="6")
                         .row
                             col-lg-12
+                                p#preloader
                                 br
-                                button.btn.btn-default.customBtn#submitButton(type="button") Submit
+                                button.btn.btn-default.customBtn#submitButton(type="button") Send Message
 
             .secondary.vCentered
                 .social
@@ -285,6 +329,6 @@ html(lang=en)
                         .col-lg-12.col-xs-12
                             p &copy; Mayowa Falade 2016
 
-        script(src="dist/js/sliderEngine.js")
-        script(src="dist/js/sliderInit.js")
+        script(src="dist/js/slider/sliderEngine.js")
+        script(src="dist/js/slider/sliderInit.js")
         script(src="dist/js/build.js")

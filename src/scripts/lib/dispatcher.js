@@ -1,22 +1,19 @@
-export default class Dispatcher {
-
+class Dispatcher {
   constructor() {
     this.notifications = [];
   }
-
   dispatch(message) {
     if (this.validate(message)) {
-
+      console.log('validated message');
     }
-    return this.notify(this.errorMessage)
+    return this.notify('Message sent.');
   }
-
   validate(message) {
-
+    return true;
   }
-
   notify(notification) {
-    console.log('Wahala dey o');
+    return notification;
   }
-
 }
+
+export default new Dispatcher;

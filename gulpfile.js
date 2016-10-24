@@ -17,7 +17,7 @@ const browserSync = require('browser-sync').create();
 const source_files = {
     sass: './src/sass/**/*.sass',
     jade: './src/jade/**/*.jade',
-    scripts: './src/scripts/*.js',
+    scripts: './src/scripts/**/*.js',
     jsEntry: './src/scripts/index.js'
 };
 

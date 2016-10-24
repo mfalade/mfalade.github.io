@@ -1,10 +1,9 @@
 $(document).ready(function() {
  
 	$("#portfolioSlider").owlCarousel({
-		items : 4,
+		items : 1,
     autoPlay : true,
-		stopOnHover: true,
-		autoPlay: 2500,
+		autoPlay: 3000,
     navigation : false,
     navigationText : ["yay","nay"],
     rewindNav : true,
