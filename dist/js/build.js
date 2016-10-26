@@ -123,7 +123,7 @@ var Notifier = function () {
 
     this.notification = $('#notification');
     this.notification.hide();
-    this.timeOutDuration = 2000;
+    this.chillDuration = 2000;
   }
 
   _createClass(Notifier, [{
@@ -140,12 +140,12 @@ var Notifier = function () {
 
       setTimeout(function () {
         _this.notification.fadeOut("slow");
-      }, this.timeOutDuration);
+      }, this.chillDuration);
     }
   }, {
     key: "chill",
     value: function chill(newDuration) {
-      this.timeOutDuration = newDuration;
+      this.chillDuration = newDuration;
       return this;
     }
   }, {
