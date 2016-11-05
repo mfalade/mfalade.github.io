@@ -23,7 +23,7 @@ $(() => {
     senderContact.val(emptyString);
   };
 
-  const flashNotification = (response) => {
+  const flashNotification = response => {
     if (!response.isGood) {
       notifier.showNotification(response.summary).chill(5000).hideNotification();
       return;

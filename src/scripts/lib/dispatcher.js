@@ -1,27 +1,47 @@
 class Dispatcher {
   constructor() {
-    this.notifications = [];
+    this.apiUrl = 'http://127.0.0.1:5000/api/v1/sendmail';
+    this.successMessage = 'Message sent!';
+    this.missingFieldMessage = 'Please fill out the required fields!';
+    this.errorMessage = 'Your message could not be sent. Please try again later!'
   }
-  dispatch(message) {
-    let verdict = this.validate(message);
-    if (verdict.isGood) {
-      return verdict;
-    }
-    return verdict;    
-  }
+
   validate(message) {
-    let verdict = {
+    const verdict = {
+      message: message,
       isGood: true,
-      summary: "Message Sent."
+      summary: this.successMessage
     };
     for (let field in message) {
       if (!message[field] || !message[field].length) {
-        verdict.isGood = false;
-        verdict.summary = 'Please fill out the required fields.'
-        break;
+        return {...verdict, isGood: false, summary: this.missingFieldMessage };
       }
     }
     return verdict;
+  }
+
+  postMessage(message) {
+    const requestContext = {
+      url: this.apiUrl,
+      type: "POST",
+      data: JSON.stringify(message),
+      dataType: "json",
+      contentType: "application/json"
+    };
+    return $.ajax(requestContext);
+  }
+
+  dispatch(message) {
+    let verdict = this.validate(message);
+    if (verdict.isGood) {
+      this.postMessage(message).done(data => {
+        if (data.status_code !== 200) {
+          verdict = {...verdict, isGood: false, summary: this.errorMessage };
+        }
+      });
+      return verdict;
+    }
+    return verdict;    
   }
 }
 

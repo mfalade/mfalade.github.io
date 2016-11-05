@@ -57,11 +57,13 @@ $(function () {
 });
 
 },{"./lib/dispatcher":2,"./lib/notifier":3}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -71,31 +73,52 @@ var Dispatcher = function () {
   function Dispatcher() {
     _classCallCheck(this, Dispatcher);
 
-    this.notifications = [];
+    this.apiUrl = 'http://127.0.0.1:5000/api/v1/sendmail';
+    this.successMessage = 'Message sent!';
+    this.missingFieldMessage = 'Please fill out the required fields!';
+    this.errorMessage = 'Your message could not be sent. Please try again later!';
   }
 
   _createClass(Dispatcher, [{
-    key: "dispatch",
-    value: function dispatch(message) {
-      var verdict = this.validate(message);
-      if (verdict.isGood) {
-        return verdict;
+    key: 'validate',
+    value: function validate(message) {
+      var verdict = {
+        message: message,
+        isGood: true,
+        summary: this.successMessage
+      };
+      for (var field in message) {
+        if (!message[field] || !message[field].length) {
+          return _extends({}, verdict, { isGood: false, summary: this.missingFieldMessage });
+        }
       }
       return verdict;
     }
   }, {
-    key: "validate",
-    value: function validate(message) {
-      var verdict = {
-        isGood: true,
-        summary: "Message Sent."
+    key: 'postMessage',
+    value: function postMessage(message) {
+      var requestContext = {
+        url: this.apiUrl,
+        type: "POST",
+        data: JSON.stringify(message),
+        dataType: "json",
+        contentType: "application/json"
       };
-      for (var field in message) {
-        if (!message[field] || !message[field].length) {
-          verdict.isGood = false;
-          verdict.summary = 'Please fill out the required fields.';
-          break;
-        }
+      return $.ajax(requestContext);
+    }
+  }, {
+    key: 'dispatch',
+    value: function dispatch(message) {
+      var _this = this;
+
+      var verdict = this.validate(message);
+      if (verdict.isGood) {
+        this.postMessage(message).done(function (data) {
+          if (data.status_code !== 200) {
+            verdict = _extends({}, verdict, { isGood: false, summary: _this.errorMessage });
+          }
+        });
+        return verdict;
       }
       return verdict;
     }
