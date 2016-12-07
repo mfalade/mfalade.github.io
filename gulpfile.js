@@ -1,12 +1,9 @@
 'use strict';
 
-const fs = require('fs');
 const gulp = require('gulp');
-const path = require('path');
 const jade = require('gulp-jade');
 const sass = require('gulp-sass');
 const babelify = require('babelify');
-const watchify = require('watchify');
 const buffer = require('vinyl-buffer');
 const plumber = require('gulp-plumber');
 const browserify = require('browserify');

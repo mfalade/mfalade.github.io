@@ -48,3 +48,24 @@ a.green:hover
     .sidePaddinglg
         padding-right: 50px
         padding-left: 50px
+
+@media only screen and (min-width : 568px)
+    .responsiveVCentered
+        display: flex
+        max-height: 350px
+        justify-content: center
+        &>*
+            align-self: center
+
+@media only screen and (min-width : 568px) and (max-width : 768px)
+    #portfolio #portfolioSlider
+        max-height: 200px
+        
+@media only screen and (max-width : 568px)
+    .responsiveVCentered
+        max-height: 200px
+
+    #skills
+        height: 600px
+        padding-left: 70px
+        padding-right: 70px
