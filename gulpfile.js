@@ -7,6 +7,7 @@ const babelify = require('babelify');
 const buffer = require('vinyl-buffer');
 const plumber = require('gulp-plumber');
 const browserify = require('browserify');
+const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const source = require('vinyl-source-stream');
 const browserSync = require('browser-sync').create();
@@ -39,6 +40,7 @@ gulp.task('sass', () => {
     return gulp.src(source_files.sass)
         .pipe(plumber())
         .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(output_files.css))
         .pipe(browserSync.stream());
 });
