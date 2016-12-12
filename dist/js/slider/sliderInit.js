@@ -2,7 +2,11 @@ $(document).ready(function () {
   const settings = {
     loop: true,
     margin: 10,
-    nav: true,
+    dots: true,
+    dotsEach: true,
+    autoplay: true,
+    smartSpeed: 1200,
+    autoplayHoverPause:true,
     responsive: {
       0: {
         items: 1
