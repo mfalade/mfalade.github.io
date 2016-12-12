@@ -6,7 +6,7 @@
     width: $logoWidth
 
 %sectionPadding
-    padding: 60px
+    padding: 100px 60px
 
 .aboutMeLogoHolder,
 .headerLogo
@@ -36,19 +36,58 @@ img
     border-top: 1px solid $grey
     border-bottom: 1px solid $grey
     .aboutMeText
-        font-size: 12px
+        font-size: 1em
         color: $textColor
         width: 45%
         margin: 40px auto
 
+.offerWrapper
+    overflow: hidden
+    height: 200px
+    width: 100%
+    img
+        height: 100%
+        -webkit-transition: all 1s ease
+        -moz-transition: all 1s ease 
+        -ms-transition: all 1s ease
+        -o-transition: all 1s ease 
+        transition: all 1s ease
+.intro
+    background: $greyBgColor
+    color: $logoBlack
+
+.grey
+    -webkit-filter: grayscale(50%)
+    -moz-filter: grayscale(50%)
+    -ms-filter: grayscale(50%)
+    -o-filter: grayscale(50%)
+    filter: grayscale(50%)
+
+figcaption
+    padding-top: 80px!important
+    text-align: center
+    font-size: 24px
+    color: $lightGreen!important
+
+[class*=' imghvr-shutter-in-']:after, 
+[class*=' imghvr-shutter-in-']:before, 
+[class^=imghvr-shutter-in-]:after, 
+[class^=imghvr-shutter-in-]:before,
+[class*=' imghvr-'] figcaption, 
+[class^=imghvr-] figcaption
+    background: $blackLighter!important
+
+.largeOffer
+    height: 400px
+    img
+        height: 100%
+        width: auto
+        overflow: auto
+
 #offerings
-    @extend %sectionPadding
     background: $greyBgColor
     height: 100%
-
-    .backgroundBlend
-        background: #F0F0F0
-        padding: 40px
+    overflow: auto
 
 #portfolio #portfolioSlider
     height: 100%
@@ -56,7 +95,7 @@ img
 #skills,
 #portfolio
     @extend %sectionSettings
-    padding: 40px 60px
+    padding: 80px 60px
 
     #skillSlider,
     #portfolioSlider
@@ -145,8 +184,7 @@ img
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-    #aboutMe,
-    #offerings
+    #aboutMe
         padding: 20px
     
 
