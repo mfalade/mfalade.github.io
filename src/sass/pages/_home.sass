@@ -20,12 +20,10 @@ img
 
 #heroSection
     @extend %sectionSettings
-    background: #121212 url("https://dppg6pot5kqvr.cloudfront.net/ui-assets/background_50.jpg") no-repeat 50% 0
+    background: $blackDarker url("https://dppg6pot5kqvr.cloudfront.net/ui-assets/background_50.jpg") no-repeat 50% 0
     background-size: cover
     height: 400px
-    color: #FFFFFF
-
-
+    color: $white
 
 #aboutMe
     @extend %sectionSettings
@@ -64,7 +62,7 @@ img
     filter: grayscale(50%)
 
 figcaption
-    padding-top: 80px!important
+    padding-top: 80px
     text-align: center
     font-size: 24px
     color: $lightGreen!important
@@ -207,6 +205,14 @@ figcaption
         width: 60%!important
     .paddingRight30
         padding: 0
+    .offerWrapper
+        height: 125px
+    .largeOffer
+        height: 250px
+    [class^='imghvr-shutter-in-']:hover figcaption, 
+    [class*=' imghvr-shutter-in-']:hover figcaption
+        padding-top: 50px
+
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px)
