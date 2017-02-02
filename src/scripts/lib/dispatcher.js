@@ -1,6 +1,6 @@
 class Dispatcher {
   constructor() {
-    this.apiUrl = 'http://127.0.0.1:5000/api/v1/sendmail';
+    this.apiUrl = 'https://mfalade-email-service.herokuapp.com/api/v1/sendmail';
     this.successMessage = 'Message sent!';
     this.missingFieldMessage = 'Please fill out the required fields!';
     this.errorMessage = 'Your message could not be sent. Please try again later!'
