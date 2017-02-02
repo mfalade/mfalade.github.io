@@ -101,7 +101,7 @@ var Dispatcher = function () {
         url: this.apiUrl,
         type: "POST",
         data: JSON.stringify(message),
-        dataType: "xml",
+        dataType: "json",
         contentType: "application/json"
       };
       return $.ajax(requestContext);
