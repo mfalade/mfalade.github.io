@@ -1,6 +1,6 @@
 var PIXEL_RATIO = (function () {
   var ctx = document.createElement("canvas").getContext("2d"),
-    dpr = window.devicePixelRatio || 2,
+    dpr = window.devicePixelRatio || 1,
     bsr = ctx.webkitBackingStorePixelRatio ||
       ctx.mozBackingStorePixelRatio ||
       ctx.msBackingStorePixelRatio ||
