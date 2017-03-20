@@ -5,8 +5,9 @@ var PIXEL_RATIO = (function () {
       ctx.mozBackingStorePixelRatio ||
       ctx.msBackingStorePixelRatio ||
       ctx.oBackingStorePixelRatio ||
-      ctx.backingStorePixelRatio || 1;
-  return dpr / bsr;
+      ctx.backingStorePixelRatio || 1,
+    pr = dpr / bsr;
+  return pr < 2 ? 2 : pr;
 })();
 
 function setTimeoutOnWindow(callback) {
@@ -88,6 +89,17 @@ Ball.prototype.getBounds = function () {
   };
 };
 
+function createParticle(cw, ch) {
+  size = Math.random() * 3 + 1;
+  particle = new Ball(size, 'rgba(0, 0, 0, 1)');
+  particle.x = Math.random() * cw;
+  particle.y = Math.random() * ch;
+  particle.vx = Math.random() * 4 - 1;
+  particle.vy = Math.random() * 4 - 1;
+  particle.mass = size;
+  return particle;
+}
+
 window.onload = function () {
   var canvas = createHiDPICanvas(window.innerWidth, window.innerHeight),
     context = canvas.getContext('2d'),
@@ -97,13 +109,7 @@ window.onload = function () {
     springAmount = 0.00005;
 
   for (var size, particle, i = 0; i < numParticles; i++) {
-    size = Math.random() * 3 + 1;
-    particle = new Ball(size, 'rgba(0, 0, 0, 1)');
-    particle.x = Math.random() * canvas.width;
-    particle.y = Math.random() * canvas.height;
-    particle.vx = Math.random() * 4 - 1;
-    particle.vy = Math.random() * 4 - 1;
-    particle.mass = size;
+    var particle = createParticle(canvas.width, canvas.height);
     particles.push(particle);
   }
 
