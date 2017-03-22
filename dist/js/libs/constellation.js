@@ -100,7 +100,8 @@ function createParticle(cw, ch) {
   return particle;
 }
 
-window.onload = function () {
+
+(function() {
   var canvas = createHiDPICanvas(window.innerWidth, window.innerHeight),
     context = canvas.getContext('2d'),
     particles = [],
@@ -183,4 +184,4 @@ window.onload = function () {
     particles.forEach(move);
     particles.forEach(draw);
   }());
-};
+})();
