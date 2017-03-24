@@ -6,7 +6,7 @@
     width: $logoWidth
 
 %sectionPadding
-    padding: 100px 60px
+    padding: 115px 60px
 
 .aboutMeLogoHolder,
 .headerLogo
@@ -42,17 +42,11 @@ img
         width: 45%
         margin: 40px auto
 
-.offerWrapper
-    overflow: hidden
-    height: 200px
-    width: 100%
-    img
-        height: 100%
-        -webkit-transition: all 1s ease
-        -moz-transition: all 1s ease 
-        -ms-transition: all 1s ease
-        -o-transition: all 1s ease 
-        transition: all 1s ease
+#offerings
+    @extend %sectionSettings
+    @extend %sectionPadding
+    height: 100%
+    overflow: auto
 
 .grey
     -webkit-filter: grayscale(50%)
@@ -83,15 +77,11 @@ figcaption
         width: auto
         overflow: auto
 
-#offerings
-    height: 100%
-    overflow: auto
-
 #portfolio #portfolioSlider
     height: 100%
 
 #skills,
-#portfolio
+#portfolio,
     @extend %sectionSettings
     padding: 80px 60px
 
@@ -140,14 +130,16 @@ figcaption
         display: block
 
 @media only screen and (min-width : 480px) and (max-width: 768px)
-    #aboutMe
-        padding-top: 20px
+    #aboutMe,
+    #offerings
+        padding-top: 40px
         .aboutMeText
             width: 50%
 
 @media only screen and (min-width : 768px) and (max-width : 992px)
-    #aboutMe
-        padding-top: 20px
+    #aboutMe,
+    #offerings    
+        padding-top: 40px
         .aboutMeText
             width: 60%
 
@@ -181,14 +173,14 @@ figcaption
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-    #aboutMe
-        padding: 20px
+    #aboutMe,
+    #offerings    
+        padding: 40px
     
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px)
-    #aboutMe,
-    #offerings
+    #aboutMe
         padding: 0
     #skills
         padding: 40px
@@ -196,10 +188,13 @@ figcaption
         &:before,
         &:after
             width: 60px
-    #aboutMe
-        padding-top: 20px
+    #aboutMe,
+    #offerings    
+        padding-top: 40px
         .aboutMeText
             width: 70%
+    #offerings .col-md-4
+        padding-top: 7px
     .paddingRight30
         padding: 0
     .offerWrapper
