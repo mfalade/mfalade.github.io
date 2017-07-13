@@ -1,13 +1,10 @@
 %sectionSettings
     vertical-align: middle
     text-align: center
-    height: $primary-sections-height
+    min-height: $primary-sections-height
 
 %logoWidth
     width: $logoWidth
-
-%sectionPadding
-    padding: 115px 60px
 
 .aboutMeLogoHolder,
 .headerLogo
@@ -30,10 +27,9 @@ img
     color: $white
 
 #aboutMe
+    @extend .full-center
     @extend %sectionSettings
-    @extend %sectionPadding
     background: $white
-    display: block
     border-top: 1px solid $grey
     border-bottom: 1px solid $grey
     .aboutMeText
@@ -43,8 +39,8 @@ img
         margin: 40px auto
 
 #offerings
+    @extend .full-center
     @extend %sectionSettings
-    @extend %sectionPadding
     overflow: auto
 
 .grey
