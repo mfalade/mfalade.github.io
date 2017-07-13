@@ -55,7 +55,7 @@ $(function () {
     flashNotification(response);
   });
 
-  console.log('\n    If you are seeing this, \n    it\'s either you are trying to figure out where my easter eggs are stashed,\n    or you are checking to see if I suck at JS (I promise I don\'t) or\n    you are on your way to snoop around. Whichever it is, you are most welcome.\n\n    For making it this far, I\'ll give a clue on how to reveal the easter eggs.\n    THEY are mostly dependent on your actions of course.\n    The first would require you to interact with the contact form.\n    The Second would be revealed if you click around enough\n    The third only happens if you view this page at a certain time of the day.\n\n    There you go. Have fun DECODING them ;)\n    ');
+  console.log('\n    If you are seeing this, \n    it\'s either you are trying to figure out where my easter eggs are stashed,\n    or you are checking to see if I suck at JS (I promise I don\'t). \n    \n    Whichever it is, your snooping around is most welcome.\n\n    For making it this far, I\'ll give a clue on how to reveal the easter eggs.\n    They are mostly dependent on your actions on this page.\n    The first would require you to interact with the contact form.\n    The Second would be revealed if you click around enough\n    The third only happens if you view this page at a certain time of the day.\n\n    I\'m lining up a few more.\n\n    There you go. Have fun DECODING them ;)\n    ');
 });
 
 },{"./lib/dispatcher":2,"./lib/notifier":3}],2:[function(require,module,exports){
