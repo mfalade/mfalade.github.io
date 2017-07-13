@@ -4,7 +4,7 @@ import SmoothScroll from './lib/smooth-scroll';
 
 $(() => {
   SmoothScroll.init();
-  
+
   let submitButton = $('#submitButton');
   let messageBody = $('#messageBody');
   let messageTitle = $('#messageTitle');
@@ -20,7 +20,7 @@ $(() => {
 
   const clearInputFields = () => {
     const emptyString = '';
-    messageBody.val(emptyString)
+    messageBody.val(emptyString);
     messageTitle.val(emptyString);
     messageSender.val(emptyString);
     senderContact.val(emptyString);
