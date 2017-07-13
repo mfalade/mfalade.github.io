@@ -49,7 +49,6 @@
     h5
         color: $blackLighter
 
-$base-spacing: 50px
 .px-1
     padding-right: .25 * $base-spacing
     padding-left: .25 * $base-spacing
@@ -91,7 +90,51 @@ $base-spacing: 50px
     padding-top: 1 * $base-spacing
     padding-bottom: 1 * $base-spacing
 
-. full-center
+.centered
+    text-align: center
+// 
+.pts
+    padding-top: 20px
+.pbs
+    padding-bottom: 20px
+
+// 
+.ptm
+    padding-top: 50px
+.pbl
+    padding-bottom: 70px
+
+// 
+.mrl
+    padding-right: 50px
+.mll
+    padding-left: 50px
+
+.whiteBackground
+    background: #FFFFFF
+
+.green
+    color: #218740
+
+a.green:hover
+    color: $lightGreen
+
+.lightGreen
+    color: $lightGreen
+
+
+@media only screen and (min-width : 992px)
+    .sidePaddinglg
+        padding-right: 150px
+        padding-left: 150px
+
+@media only screen and (min-width : 480px) and (max-width : 768px)
+    .sidePaddinglg
+        padding-right: 50px
+        padding-left: 50px
+        
+
+.full-center
     -webkit-display : -webkit-flex
     -moz-display : -moz-flex
     -ms-display : -ms-flex

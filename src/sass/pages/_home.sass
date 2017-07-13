@@ -38,17 +38,9 @@ img
         width: 45%
         margin: 40px auto
 
-#offerings
-    @extend .full-center
-    @extend %sectionSettings
-    overflow: auto
 
-.grey
-    -webkit-filter: grayscale(50%)
-    -moz-filter: grayscale(50%)
-    -ms-filter: grayscale(50%)
-    -o-filter: grayscale(50%)
-    filter: grayscale(50%)
+
+
 
 figcaption
     display: flex
@@ -64,29 +56,6 @@ figcaption
 [class*=' imghvr-'] figcaption, 
 [class^=imghvr-] figcaption
     background: $blackLighter!important
-
-.largeOffer
-    height: 400px
-    img
-        height: 100%
-        width: auto
-        overflow: auto
-
-#skills
-    @extend %sectionSettings
-    padding: 80px 60px
-
-    #skillSlider,
-    #portfolioSlider
-        margin: 50px auto 20px
-
-    #skillSlider
-        .row
-            div.outer
-                border-left: 1px solid $grey
-
-            div:first-child
-                border-left: none
 
 .paddingRight30
     padding-right: 30px
