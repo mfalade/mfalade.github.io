@@ -1,6 +1,7 @@
 %sectionSettings
     vertical-align: middle
     text-align: center
+    height: $parent-sections-height
 
 %logoWidth
     width: $logoWidth
@@ -22,17 +23,16 @@ img
 
 #heroSection
     @extend %sectionSettings
+    height: $hero-section-height
     background: $blackDarker
     overflow: hidden
     background-size: cover
-    height: 400px
     color: $white
 
 #aboutMe
     @extend %sectionSettings
     @extend %sectionPadding
     background: $white
-    height: 100%
     display: block
     border-top: 1px solid $grey
     border-bottom: 1px solid $grey
@@ -45,7 +45,6 @@ img
 #offerings
     @extend %sectionSettings
     @extend %sectionPadding
-    height: 100%
     overflow: auto
 
 .grey
@@ -77,11 +76,7 @@ figcaption
         width: auto
         overflow: auto
 
-#portfolio #portfolioSlider
-    height: 100%
-
-#skills,
-#portfolio,
+#skills
     @extend %sectionSettings
     padding: 80px 60px
 
