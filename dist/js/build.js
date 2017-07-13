@@ -9,9 +9,15 @@ var _notifier = require('./lib/notifier');
 
 var _notifier2 = _interopRequireDefault(_notifier);
 
+var _smoothScroll = require('./lib/smooth-scroll');
+
+var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(function () {
+  _smoothScroll2.default.init();
+
   var submitButton = $('#submitButton');
   var messageBody = $('#messageBody');
   var messageTitle = $('#messageTitle');
@@ -58,7 +64,7 @@ $(function () {
   console.log('\n    If you are seeing this, \n    it\'s either you are trying to figure out where my easter eggs are stashed,\n    or you are checking to see if I suck at JS (I promise I don\'t). \n    \n    Whichever it is, your snooping around is most welcome.\n\n    For making it this far, I\'ll give a clue on how to reveal the easter eggs.\n    They are mostly dependent on your actions on this page.\n    The first would require you to interact with the contact form.\n    The Second would be revealed if you click around enough\n    The third only happens if you view this page at a certain time of the day.\n\n    I\'m lining up a few more.\n\n    There you go. Have fun DECODING them ;)\n    ');
 });
 
-},{"./lib/dispatcher":2,"./lib/notifier":3}],2:[function(require,module,exports){
+},{"./lib/dispatcher":2,"./lib/notifier":3,"./lib/smooth-scroll":4}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -185,6 +191,46 @@ var Notifier = function () {
 }();
 
 exports.default = new Notifier();
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SmoothScroll = function () {
+  function SmoothScroll() {
+    _classCallCheck(this, SmoothScroll);
+  }
+
+  _createClass(SmoothScroll, null, [{
+    key: 'init',
+    value: function init() {
+      $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    }
+  }]);
+
+  return SmoothScroll;
+}();
+
+exports.default = SmoothScroll;
 
 },{}]},{},[1])
 
