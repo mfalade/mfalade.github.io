@@ -11,7 +11,7 @@
       "es2015"
     ]
   },
-  "author": "andela-mfalade",
+  "author": "mfalade",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.6",

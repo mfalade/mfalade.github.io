@@ -1,0 +1,20 @@
+@mixin respond-to($breakpoint)
+  @if $breakpoint == "size-xs"
+    @media (min-width: #{$size-xs}) and (max-width: #{$size-sm})
+      @content
+
+  @if $breakpoint == "size-sm"
+    @media (min-width: #{$size-sm}) and (max-width: #{$size-md})
+      @content
+
+  @else if $breakpoint == "size-md"
+    @media (min-width: #{$size-md}) and (max-width: #{$size-lg})
+      @content
+
+  @else if $breakpoint == "size-lg"
+    @media (min-width: #{$size-lg}) and (max-width: #{$size-xl})
+      @content
+
+  @else if $breakpoint == "size-xl"
+    @media (min-width: #{$size-lg})
+      @content
