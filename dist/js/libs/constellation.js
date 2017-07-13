@@ -170,7 +170,7 @@ function createParticle(cw, ch) {
     var lineheight = 45;
     var introContent = [
       'Mayowa Falade',
-      'Software Developer'
+      'Python and Javascript Ninja'
     ]
 
     var x = canvas.width / 4;
