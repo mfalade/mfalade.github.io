@@ -1,24 +1,27 @@
 import dispatcher from './lib/dispatcher';
 import notifier from './lib/notifier';
+import SmoothScroll from './lib/smooth-scroll';
 
 $(() => {
+  SmoothScroll.init();
+  
   let submitButton = $('#submitButton');
   let messageBody = $('#messageBody');
   let messageTitle = $('#messageTitle');
   let messageSender = $('#messageSender');
   let senderContact = $('#senderContact');
-  
+
   const compileMessage = () => ({
     messageBody: messageBody.val(),
     messageTitle: messageTitle.val(),
     messageSender: messageSender.val(),
     senderContact: senderContact.val()
-  });  
+  });
 
   const clearInputFields = () => {
     const emptyString = '';
     messageBody.val(emptyString)
-    messageTitle.val(emptyString) ;
+    messageTitle.val(emptyString);
     messageSender.val(emptyString);
     senderContact.val(emptyString);
   };

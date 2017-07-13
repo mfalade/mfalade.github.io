@@ -1,17 +1,27 @@
 extends base
 append content
-    header
+    header#y-0
         nav.navbar.navbar-default.navbar-fixed-top
             .container-fluid.px-3.py-1
                 .navbar-header
-                    a.navbar-brand(href="/")
+                    a.navbar-brand(href="#y-0")
                         img(src="http://res.cloudinary.com/mayor/image/upload/v1490106286/mf_rhfflx.png" alt="Mayowa Falade Site Logo" )
+                    .nav.navbar-right
+                        a(href="#y-1") About
+                        a &nbsp; &nbsp; &nbsp; &nbsp;
+                        a(href="#y-2") Contact
+                        a &nbsp; &nbsp; &nbsp; &nbsp;
+                        a(href="#y-2") Blog
+                            
 
     section
         #heroSection.full-center.font1
             canvas.canvas
+        div.block
+            a(href="#y-1")
+                i.material-icons keyboard_arrow_down
 
-    section
+    section#y-1
         #aboutMe
             div
                 .aboutMeLogoHolder
@@ -34,7 +44,7 @@ append content
                             a.green(href="https://ng.linkedin.com/in/falademayowa" target="_blank") here
 
 
-    footer.centered
+    footer#y-2.centered
         .primary#getInTouch
             h3.headerPadding Get in Touch
                 span.fancyHeader
