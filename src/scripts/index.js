@@ -42,4 +42,21 @@ $(() => {
     let response = dispatcher.dispatch(compiledMessage);
     flashNotification(response);
   });
+
+  console.log(
+    `
+    If you are seeing this, 
+    it's either you are trying to figure out where my easter eggs are stashed,
+    or you are checking to see if I suck at JS (I promise I don't) or
+    you are on your way to snoop around. Whichever it is, you are most welcome.
+
+    For making it this far, I'll give a clue on how to reveal the easter eggs.
+    THEY are mostly dependent on your actions of course.
+    The first would require you to interact with the contact form.
+    The Second would be revealed if you click around enough
+    The third only happens if you view this page at a certain time of the day.
+
+    There you go. Have fun DECODING them ;)
+    `
+  )
 });
