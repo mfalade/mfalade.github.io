@@ -7,11 +7,19 @@ append content
                     a.navbar-brand(href="#y-0")
                         img(src="http://res.cloudinary.com/mayor/image/upload/v1490106286/mf_rhfflx.png" alt="Mayowa Falade Site Logo" )
                     .nav.navbar-right
-                        a(href="#y-1") About
-                        a &nbsp; &nbsp; &nbsp; &nbsp;
-                        a(href="#y-2") Contact
-                        a &nbsp; &nbsp; &nbsp; &nbsp;
-                        a(href="#y-2") Blog
+                        a.inline(href="#y-1")
+                            i.material-icons link 
+                            span About
+                        br
+                        br
+                        a.inline(href="#y-2")
+                            i.material-icons link 
+                            span Contact
+                        br
+                        br
+                        a.inline(href="#y-2")
+                            i.material-icons link 
+                            span Blog
                             
 
     section
@@ -23,11 +31,15 @@ append content
             div
                 .aboutMeLogoHolder
                     img.logo2(src="http://res.cloudinary.com/mayor/image/upload/v1490106285/mf_inverted_m3zjd2.png" alt="Mayowa Falade Site Inverted Logo")
-                h4.font1.fancy Who I am (in 10 seconds)
+                h4.font1.fancy Quick summary about me
                 .aboutMeText
-                    p I am passionate about programming and I work primarily with Python and Javascript. 
+                    p Lorem Ipsum Dolor Sit Amet ... Just kiddin.
+                    p I am a fullstack Python and Javascript developer with background in Computer Science.
                     p I have lots of experience building kick-a55 applications and I love to learn new things as well as share my knowledge and experiences.
-                    p Currently a technical team lead at Intelia, I have developed backend applications and services at 
+                    p Currently a technical team lead at 
+                        span
+                            a.green(href="http://intelia.io/" target="_blank") Intelia
+                        span , I have developed backend applications and services at 
                         span
                             a.green(href="https://www.udacity.com/" target="_blank") Udacity. 
                         span Also I have worked as a Fullstack Platform Engineer (consultant) at 
