@@ -1,5 +1,2 @@
 node_modules/
 npm-debug.log
-dist/js/build.js.map
-base.html
-jsImports.html
