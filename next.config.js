@@ -5,7 +5,7 @@ module.exports = withSass({
   cssModules: true,
   webpack(config) {
     config.resolve.alias['components'] = path.join(__dirname, 'components');
-    config.resolve.alias['styleguideSS'] = path.join(__dirname, 'styleguideSS');
+    config.resolve.alias['styleguide'] = path.join(__dirname, 'styleguide');
     return config;
-  },
+  }
 });
