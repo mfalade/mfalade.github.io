@@ -4,6 +4,14 @@ export const Container = styled.section`
   display: flex;
   height: calc(100vh - ${({ theme }) => theme.dimension.navbar.height});
   align-items: center;
+  position: relative;
+  padding-left: 56px;
+  top: -50px;
+`;
+
+export const TextWrapper = styled.div`
+  min-width: 500px;
+  transform: translate(-51px, 89px);
 `;
 
 export const Title = styled.h1`

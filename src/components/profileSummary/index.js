@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { Container, Title, Description } from './styles';
+import BackgroundDots from 'components/backgroundDots';
+
+import { Container, TextWrapper, Title, Description } from './styles';
 
 function ProfileSummary() {
   return (
     <Container>
-      <div>
+      <BackgroundDots />
+      <TextWrapper>
         <Title>Mayowa Falade.</Title>
         <Description>Fullstack Python and Javascript developer</Description>
-      </div>
+      </TextWrapper>
     </Container>
   );
 }
