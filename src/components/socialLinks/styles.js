@@ -8,8 +8,8 @@ export const Container = styled.section`
   height: 200px;
 
   ${StyledIconBase} {
-    height: 24px;
-    width: 24px;
+    height: ${({ theme }) => theme.icon.md};
+    width: ${({ theme }) => theme.icon.md};
   }
 `;
 

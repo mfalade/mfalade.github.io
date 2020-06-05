@@ -15,4 +15,5 @@ export const Content = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 `;

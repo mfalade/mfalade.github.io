@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from 'components/navbar';
 import ProfileSummary from 'components/profileSummary';
 import SocialLinks from 'components/socialLinks';
+import ScrollToBottom from 'components/scrollToBottom';
 
 import { StyledSection, Content } from './styles';
 
@@ -14,6 +15,7 @@ function Home() {
         <ProfileSummary />
         <SocialLinks />
       </Content>
+      <ScrollToBottom />
     </StyledSection>
   );
 }

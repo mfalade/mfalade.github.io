@@ -34,4 +34,10 @@ export default {
   dimension: {
     navbar: { height: '180px' },
   },
+  icon: {
+    sm: '16px',
+    md: '24px',
+    lg: '40px',
+    xl: '56px',
+  },
 };
