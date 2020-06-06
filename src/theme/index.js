@@ -32,6 +32,11 @@ export default {
       lg: '56px',
     },
   },
+  zIndex: {
+    level1: '10',
+    level2: '20',
+    level3: '30',
+  },
   dimension: {
     navbar: { height: '180px' },
   },
