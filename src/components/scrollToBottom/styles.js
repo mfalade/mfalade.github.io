@@ -7,7 +7,7 @@ const slideNFade = keyframes`
     opacity: 0;
   }
 
-  54%, 55%{
+  45%, 65%{
     transform: translateY(0) scale(1);
     opacity: 1.5;
   }

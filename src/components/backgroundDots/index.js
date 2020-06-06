@@ -1,20 +1,24 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { getRandomDotColor } from 'helpers';
 
-function BackgroundDots() {
+function BackgroundDots({ rows, cols }) {
+  const cellSize = 50;
+  const svgHeight = (rows - 1) * cellSize + rows;
+  const svgWidth = (cols - 1) * cellSize + cols;
   const themeContext = useContext(ThemeContext);
   const fillColor = getRandomDotColor(themeContext);
   return (
-    <svg width="154" height="154">
+    <svg width={svgWidth} height={svgHeight}>
       <defs>
         <pattern
           id="dot"
           x="0"
           y="0"
-          width="50"
-          height="50"
+          width={cellSize}
+          height={cellSize}
           patternUnits="userSpaceOnUse"
           patternContentUnits="userSpaceOnUse"
         >
@@ -25,5 +29,15 @@ function BackgroundDots() {
     </svg>
   );
 }
+
+BackgroundDots.propTypes = {
+  cols: PropTypes.number,
+  rows: PropTypes.number,
+};
+
+BackgroundDots.defaultProps = {
+  cols: 5,
+  rows: 7,
+};
 
 export default BackgroundDots;
