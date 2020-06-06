@@ -1,13 +1,13 @@
 import React from 'react';
 
-import BackgroundDots from 'components/backgroundDots';
+import DottedGrid from 'components/dottedGrid';
 
 import { Container, TextWrapper, Title, Description } from './styles';
 
 function ProfileSummary() {
   return (
     <Container>
-      <BackgroundDots />
+      <DottedGrid />
       <TextWrapper>
         <Title>Mayowa Falade.</Title>
         <Description>Fullstack Python and Javascript developer</Description>

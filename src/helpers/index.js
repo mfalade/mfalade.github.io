@@ -1,4 +1,6 @@
 import get from 'lodash/get';
+import rangeHelper from './range';
+import gridHelper from './grid';
 
 export const getRandomDotColor = (themeContext) => {
   const colorMap = get(themeContext, 'color', {});
@@ -7,3 +9,6 @@ export const getRandomDotColor = (themeContext) => {
   const randColor = dotColors[randIndex] || 'white';
   return colorMap[randColor];
 };
+
+export const grid = gridHelper;
+export const range = rangeHelper;
