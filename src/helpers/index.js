@@ -1,6 +1,4 @@
 import get from 'lodash/get';
-import rangeHelper from './range';
-import gridHelper from './grid';
 
 export const getRandomDotColor = (themeContext) => {
   const colorMap = get(themeContext, 'color', {});
@@ -10,5 +8,12 @@ export const getRandomDotColor = (themeContext) => {
   return colorMap[randColor];
 };
 
-export const grid = gridHelper;
-export const range = rangeHelper;
+export const gridGenerator = ({ rows, cols }) => {
+  return range(rows)
+    .map((row) => range(cols).map((col) => ({ x: col, y: row })))
+    .flat();
+};
+
+export const range = (arrayLength) => {
+  return Array.from({ length: arrayLength }, (_, i) => i);
+};

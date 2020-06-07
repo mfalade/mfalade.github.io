@@ -6,11 +6,16 @@ export const Container = styled.section`
   align-items: center;
   position: relative;
   padding-left: 56px;
+
+  svg {
+    margin-right: 50px;
+  }
 `;
 
 export const TextWrapper = styled.div`
   min-width: 500px;
-  transform: translate(-106px, 0);
+  position: absolute;
+  left: 156px;
 `;
 
 export const Title = styled.h1`
