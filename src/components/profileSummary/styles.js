@@ -6,25 +6,23 @@ export const Container = styled.section`
   align-items: center;
   position: relative;
   padding-left: 56px;
-
-  svg {
-    margin-right: 50px;
-  }
 `;
 
 export const TextWrapper = styled.div`
-  min-width: 500px;
-  position: absolute;
-  left: 156px;
+  padding-left: 106px;
 `;
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.font.size.lg};
-  line-height: 50px;
+  line-height: 48px;
   font-weight: 700;
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 export const Description = styled.p`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.font.size.sm};
+`;
+
+export const BgContainer = styled.div`
+  position: absolute;
 `;

@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 
-export const getRandomDotColor = (themeContext) => {
+export const getRandomGridColor = (themeContext) => {
   const colorMap = get(themeContext, 'color', {});
   const dotColors = get(themeContext, 'dotColors', []);
   const randIndex = Math.floor(Math.random() * dotColors.length);
