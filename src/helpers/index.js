@@ -4,7 +4,7 @@ export const getRandomGridColor = (themeContext) => {
   const colorMap = get(themeContext, 'color', {});
   const dotColors = get(themeContext, 'dotColors', []);
   const randIndex = Math.floor(Math.random() * dotColors.length);
-  const randColor = dotColors[randIndex] || 'white';
+  const randColor = dotColors[randIndex];
   return colorMap[randColor];
 };
 

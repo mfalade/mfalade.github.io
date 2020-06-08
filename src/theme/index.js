@@ -2,13 +2,12 @@ const colorMap = {
   gray1: '#191A1E',
   gray2: '#212a33',
   green1: '#01bdae',
-  green2: '#84d5cf',
-  green3: '#2d6664',
-  orange1: '#f89419',
-  blue1: '#0582ff',
-  red1: '#c82655',
-  red2: '#652039',
+  green2: '#27c88d',
+  gold: '#f89419',
+  blue: '#27a3c8',
+  red: '#c82655',
   white: '#e2e3e4',
+  purple: '#8a27c8',
 };
 
 export default {
@@ -46,5 +45,5 @@ export default {
     lg: '40px',
     xl: '56px',
   },
-  dotColors: ['green1', 'orange1', 'red1', 'white'],
+  dotColors: ['red', 'green1', 'green2', 'blue', 'gold', 'purple'],
 };
