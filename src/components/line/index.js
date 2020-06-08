@@ -14,7 +14,7 @@ function Line({ stroke }) {
         <g
           id="Design"
           stroke="none"
-          strokeWidth="1"
+          strokeWidth="1.5"
           fill="none"
           fillRule="evenodd"
           opacity="0.3"
@@ -41,7 +41,7 @@ Line.propTypes = {
 };
 
 Line.defaultProps = {
-  stroke: '#ffffff',
+  stroke: '#FFF',
 };
 
 export default Line;

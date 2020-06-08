@@ -13,11 +13,12 @@ import { StyledSection, Content, GridContainer } from './styles';
 
 function Landing() {
   const themeContext = useContext(ThemeContext);
+  const foregroundColor = getRandomGridColor(themeContext);
   const dottedGridRenderer = () => (
     <GridContainer>
       <DottedGrid
         gridColor={{
-          foreground: getRandomGridColor(themeContext),
+          foreground: foregroundColor,
           background: themeContext.color.gray1,
         }}
       />
@@ -26,7 +27,7 @@ function Landing() {
   return (
     <StyledSection>
       <Navbar />
-      <BackgroundLines />
+      <BackgroundLines color={foregroundColor} />
       <Content>
         <ProfileSummary bgContentRenderer={dottedGridRenderer} />
         <SocialLinks />
