@@ -18,7 +18,10 @@ const slideNFade = keyframes`
   }
 `;
 
-export const IconContainer = styled.div`
+export const IconContainer = styled.button`
+  outline: none;
+  border: none;
+  background: none;
   position: absolute;
   bottom: 24px;
   left: 50%;

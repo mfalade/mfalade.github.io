@@ -8,9 +8,9 @@ import { StyledContainer } from './styles';
 function BackgroundLines({ color }) {
   return (
     <StyledContainer>
-      <Line stroke={color} />
-      <Line stroke={color} />
-      <Line stroke={color} />
+      <Line />
+      <Line />
+      <Line />
     </StyledContainer>
   );
 }

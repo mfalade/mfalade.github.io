@@ -14,7 +14,7 @@ function Line({ stroke }) {
         <g
           id="Design"
           stroke="none"
-          strokeWidth="1.5"
+          strokeWidth="1"
           fill="none"
           fillRule="evenodd"
           opacity="0.3"
