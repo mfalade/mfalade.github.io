@@ -5,7 +5,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 200px;
+  height: 248px;
 
   ${StyledIconBase} {
     height: ${({ theme }) => theme.icon.md};

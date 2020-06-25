@@ -4,21 +4,26 @@ import Grid from 'lib/grid';
 import { baseLayout } from 'lib/layouts';
 
 function DottedGrid({ rows, cols, cellSize, layout, gridColor }) {
-  const colorConfig = {
+  const grid = new Grid({
+    rows: Number(rows),
+    cols: Number(cols),
+    cellSize: Number(cellSize),
     backgroundColor: gridColor.background,
     foregroundColor: gridColor.foreground,
-  };
-
-  const grid = new Grid({ ...colorConfig, rows, cols, cellSize });
+  });
   grid.applyLayout(layout);
   return grid.render();
 }
 
 DottedGrid.propTypes = {
-  cols: PropTypes.number,
-  rows: PropTypes.number,
-  cellSize: PropTypes.number,
+  cols: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  cellSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   layout: PropTypes.array,
+  gridColor: PropTypes.shape({
+    background: PropTypes.string,
+    foreground: PropTypes.string,
+  }),
 };
 
 DottedGrid.defaultProps = {
@@ -26,6 +31,10 @@ DottedGrid.defaultProps = {
   rows: 7,
   cellSize: 50,
   layout: baseLayout,
+  gridColor: {
+    background: 'inherit',
+    foreground: '#fff',
+  },
 };
 
 export default DottedGrid;

@@ -7,12 +7,13 @@ export const StyledHeader = styled.header`
   padding-top: ${({ theme }) => theme.spacing.md};
 `;
 
-export const StyledNav = styled.nav`
+export const StyledNav = styled.ul`
   display: flex;
+  align-items: center;
 
   li {
     display: inline-flex;
-    padding-left: ${({ theme }) => theme.spacing.md};
+    margin-left: ${({ theme }) => theme.spacing.md};
   }
 `;
 

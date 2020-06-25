@@ -14,13 +14,21 @@ export default class Grid {
   foregroundColor = '';
   backgroundColor = '';
 
-  constructor({ cols, rows, cellSize, foregroundColor, backgroundColor }) {
+  constructor({
+    cols,
+    rows,
+    cellSize,
+    foregroundColor,
+    backgroundColor,
+    gridDotSize = 2,
+  }) {
     this.cellSize = cellSize;
+    this.gridDotSize = gridDotSize;
     this.gridCells = gridGenerator({ rows, cols });
-    this.gridHeight = (rows - 1) * cellSize + rows;
-    this.gridWidth = (cols - 1) * cellSize + cols;
-    this.foregroundColor = foregroundColor;
-    this.backgroundColor = backgroundColor;
+    this.gridHeight = this.computeCellArea(rows);
+    this.gridWidth = this.computeCellArea(cols);
+    this.foregroundColor = foregroundColor || this.foregroundColor;
+    this.backgroundColor = backgroundColor || this.backgroundColor;
     this.setBaseLayout();
   }
 
@@ -28,7 +36,12 @@ export default class Grid {
     return (
       <defs>
         <g id={this.gridDotId}>
-          <circle id="pattern-circle" cx="2" cy="2" r="2" />
+          <circle
+            id="pattern-circle"
+            cx={this.gridDotSize}
+            cy={this.gridDotSize}
+            r={this.gridDotSize}
+          />
         </g>
       </defs>
     );
@@ -62,6 +75,15 @@ export default class Grid {
         fill={cell.fillColor}
       />
     ));
+  }
+
+  computeCellArea(numCells) {
+    if (numCells < 1) {
+      return 0;
+    }
+    const correction = this.gridDotSize * 2;
+    const areaOccupiedByCells = (numCells - 1) * this.cellSize;
+    return areaOccupiedByCells + correction;
   }
 
   render() {
