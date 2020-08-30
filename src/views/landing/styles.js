@@ -20,7 +20,4 @@ export const Content = styled.section`
 
 export const GridContainer = styled.div`
   display: flex;
-  svg {
-    margin-right: 50px;
-  }
 `;

@@ -32,6 +32,7 @@ export default {
     },
   },
   zIndex: {
+    level0: '1',
     level1: '10',
     level2: '20',
     level3: '30',

@@ -3,14 +3,17 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from 'theme';
 import Home from 'views/home';
+import { AppThemeContainer } from 'context/theme';
 
 import GlobalStyles from './globalStyles';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Home />
+      <AppThemeContainer>
+        <GlobalStyles />
+        <Home />
+      </AppThemeContainer>
     </ThemeProvider>
   );
 }

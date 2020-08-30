@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import Navbar from 'components/navbar';
 import BackgroundLines from 'components/backgroundLines';
@@ -7,19 +6,18 @@ import DottedGrid from 'components/dottedGrid';
 import ProfileSummary from 'components/profileSummary';
 import SocialLinks from 'components/socialLinks';
 import ScrollToBottom from 'components/scrollToBottom';
-import { getRandomGridColor } from 'helpers';
+import ThemeContext from 'context/theme';
 
 import { StyledSection, Content, GridContainer } from './styles';
 
 function Landing() {
-  const themeContext = useContext(ThemeContext);
-  const foregroundColor = getRandomGridColor(themeContext);
+  const theme = useContext(ThemeContext);
   const dottedGridRenderer = () => (
     <GridContainer>
       <DottedGrid
         gridColor={{
-          foreground: foregroundColor,
-          background: themeContext.color.gray1,
+          foreground: theme.color.foreground,
+          background: theme.color.background,
         }}
       />
     </GridContainer>
@@ -27,7 +25,7 @@ function Landing() {
   return (
     <StyledSection>
       <Navbar />
-      <BackgroundLines color={foregroundColor} />
+      <BackgroundLines color={theme.color.foreground} />
       <Content>
         <ProfileSummary bgContentRenderer={dottedGridRenderer} />
         <SocialLinks />

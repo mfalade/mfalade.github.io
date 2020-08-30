@@ -5,11 +5,12 @@ export const Container = styled.section`
   height: calc(100vh - ${({ theme }) => theme.dimension.navbar.height});
   align-items: center;
   position: relative;
-  padding-left: 56px;
+  padding-left: ${({ theme }) => theme.spacing.lg};
 `;
 
 export const TextWrapper = styled.div`
-  padding-left: 106px;
+  padding-left: 146px;
+  z-index: ${({ theme }) => theme.zIndex.level1};
 `;
 
 export const Title = styled.h1`
@@ -21,6 +22,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-size: ${({ theme }) => theme.font.size.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 export const BgContainer = styled.div`

@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Line from 'components/line';
-
 import { StyledContainer } from './styles';
 
 function BackgroundLines({ color }) {
   return (
     <StyledContainer>
-      <Line />
-      <Line />
-      <Line />
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </StyledContainer>
   );
 }

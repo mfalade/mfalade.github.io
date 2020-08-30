@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import DownloadButton from 'components/downloadButton';
+
 import {
   Container,
   BgContainer,
@@ -16,6 +18,7 @@ function ProfileSummary({ bgContentRenderer }) {
       <TextWrapper>
         <Title>Mayowa Falade</Title>
         <Description>Fullstack Python and Javascript developer</Description>
+        <DownloadButton label="View CV" />
       </TextWrapper>
     </Container>
   );

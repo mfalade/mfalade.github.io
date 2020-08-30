@@ -6,9 +6,15 @@ export const StyledContainer = styled.div`
   position: absolute;
   top: 0;
   display: flex;
-  transform: translateX(-61%);
+  // transform: translateX(-61%);
+  justify-content: space-between;
 
   svg {
     height: 100vh;
+  }
+
+  div {
+    height: 100vh;
+    border-right: 0.1rem solid rgba(255, 255, 255, 0.05);
   }
 `;
