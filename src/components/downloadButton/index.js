@@ -6,7 +6,7 @@ import ThemeContext from 'context/theme';
 
 import { StyledButton, IconContainer, LabelContainer } from './styles';
 
-function DownloadButton({ label, onClick, icon }) {
+const DownloadButton = ({ label, onClick, icon }) => {
   const theme = useContext(ThemeContext);
   return (
     <StyledButton btnColor={theme.color.foreground}>
@@ -14,7 +14,7 @@ function DownloadButton({ label, onClick, icon }) {
       <LabelContainer>{label}</LabelContainer>
     </StyledButton>
   );
-}
+};
 
 DownloadButton.propTypes = {
   label: PropTypes.string.isRequired,

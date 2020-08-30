@@ -8,7 +8,7 @@ import {
 
 import { Container, StyledLink } from './styles';
 
-function SocialLinks() {
+const SocialLinks = () => {
   const socialLinks = [
     { href: '', title: 'Link to LinkedIn', icon: Linkedin, id: 'LinkedIn' },
     { href: '', title: 'Link to Github', icon: Github, id: 'Github' },
@@ -24,6 +24,6 @@ function SocialLinks() {
       ))}
     </Container>
   );
-}
+};
 
 export default SocialLinks;

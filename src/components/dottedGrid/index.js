@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from 'lib/grid';
 import { baseLayout } from 'lib/layouts';
 
-function DottedGrid({ rows, cols, cellSize, layout, gridColor }) {
+const DottedGrid = ({ rows, cols, cellSize, layout, gridColor }) => {
   const grid = new Grid({
     rows: Number(rows),
     cols: Number(cols),
@@ -13,7 +13,7 @@ function DottedGrid({ rows, cols, cellSize, layout, gridColor }) {
   });
   grid.applyLayout(layout);
   return grid.render();
-}
+};
 
 DottedGrid.propTypes = {
   cols: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

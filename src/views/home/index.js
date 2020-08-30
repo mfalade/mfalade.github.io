@@ -4,12 +4,12 @@ import Landing from 'views/landing';
 
 import { MainContainer } from './styles';
 
-function Home() {
+const Home = () => {
   return (
     <MainContainer>
       <Landing />
     </MainContainer>
   );
-}
+};
 
 export default Home;

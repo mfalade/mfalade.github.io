@@ -7,7 +7,7 @@ import { AppThemeContainer } from 'context/theme';
 
 import GlobalStyles from './globalStyles';
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <AppThemeContainer>
@@ -16,6 +16,6 @@ function App() {
       </AppThemeContainer>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

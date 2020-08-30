@@ -6,7 +6,7 @@ import Logo from 'assets/images/logo-white.png';
 
 import { StyledHeader, StyledNav, StyledImage } from './styles';
 
-function Navbar() {
+const Navbar = () => {
   const navLinks = ['About', 'Projects', 'Contact'];
   return (
     <StyledHeader>
@@ -23,6 +23,6 @@ function Navbar() {
       </StyledNav>
     </StyledHeader>
   );
-}
+};
 
 export default Navbar;

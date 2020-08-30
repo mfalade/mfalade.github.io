@@ -10,7 +10,7 @@ import ThemeContext from 'context/theme';
 
 import { StyledSection, Content, GridContainer } from './styles';
 
-function Landing() {
+const Landing = () => {
   const theme = useContext(ThemeContext);
   const dottedGridRenderer = () => (
     <GridContainer>
@@ -33,6 +33,6 @@ function Landing() {
       <ScrollToBottom />
     </StyledSection>
   );
-}
+};
 
 export default Landing;

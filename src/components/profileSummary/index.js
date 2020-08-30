@@ -11,7 +11,7 @@ import {
   Description,
 } from './styles';
 
-function ProfileSummary({ bgContentRenderer }) {
+const ProfileSummary = ({ bgContentRenderer }) => {
   return (
     <Container>
       <BgContainer>{bgContentRenderer()}</BgContainer>
@@ -22,7 +22,7 @@ function ProfileSummary({ bgContentRenderer }) {
       </TextWrapper>
     </Container>
   );
-}
+};
 
 ProfileSummary.propTypes = {
   bgContentRenderer: PropTypes.func,

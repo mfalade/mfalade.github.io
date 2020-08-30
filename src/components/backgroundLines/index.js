@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledContainer } from './styles';
 
-function BackgroundLines({ color }) {
+const BackgroundLines = ({ color }) => {
   return (
     <StyledContainer>
       <div></div>
@@ -12,7 +12,7 @@ function BackgroundLines({ color }) {
       <div></div>
     </StyledContainer>
   );
-}
+};
 
 BackgroundLines.propTypes = {
   color: PropTypes.string,

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { StyledLink } from './styles';
 
-function NavLink({ label, href }) {
+const NavLink = ({ label, href }) => {
   return <StyledLink href={href}>{label}</StyledLink>;
-}
+};
 
 NavLink.propTypes = {
   label: PropTypes.string.isRequired,
