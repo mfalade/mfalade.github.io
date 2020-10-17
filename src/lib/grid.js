@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 
-import { gridGenerator } from 'helpers';
+import { generateGridCells } from 'helpers';
 
 import { baseLayout } from './layouts';
 
@@ -24,7 +24,7 @@ export default class Grid {
   }) {
     this.cellSize = cellSize;
     this.gridDotSize = gridDotSize;
-    this.gridCells = gridGenerator({ rows, cols });
+    this.gridCells = generateGridCells({ rows, cols });
     this.gridHeight = this.computeCellArea(rows);
     this.gridWidth = this.computeCellArea(cols);
     this.foregroundColor = foregroundColor || this.foregroundColor;

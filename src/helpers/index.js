@@ -8,7 +8,7 @@ export const getRandColor = (themeContext) => {
   return colorMap[randColor];
 };
 
-export const gridGenerator = ({ rows, cols }) => {
+export const generateGridCells = ({ rows, cols }) => {
   return range(rows)
     .map((row) => range(cols).map((col) => ({ x: col, y: row })))
     .flat();
