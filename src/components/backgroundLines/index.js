@@ -1,25 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { StyledContainer } from './styles';
+
+import Line from 'components/line';
 
 const BackgroundLines = ({ color }) => {
   return (
     <StyledContainer>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <Line />
+      <Line />
+      <Line />
     </StyledContainer>
   );
-};
-
-BackgroundLines.propTypes = {
-  color: PropTypes.string,
-};
-
-BackgroundLines.defaultProps = {
-  color: '#FFF',
 };
 
 export default BackgroundLines;

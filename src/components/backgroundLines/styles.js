@@ -6,15 +6,10 @@ export const StyledContainer = styled.div`
   position: absolute;
   top: 0;
   display: flex;
-  // transform: translateX(-61%);
-  justify-content: space-between;
+  transform: translateX(-61%);
 
   svg {
     height: 100vh;
-  }
-
-  div {
-    height: 100vh;
-    border-right: 0.1rem solid rgba(255, 255, 255, 0.05);
+    margin: 0 5px;
   }
 `;
