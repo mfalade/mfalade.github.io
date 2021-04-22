@@ -1,0 +1,56 @@
+version: 2.0
+
+defaults: &bootstrap_instance
+  working_directory: ~/mfalade.github.io
+  docker:
+    - image: circleci/node
+
+aliases:
+  - &restore_cache
+    restore_cache:
+      name: Restore Yarn Package Cache
+      keys:
+        - yarn-packages-{{ checksum "yarn.lock" }}
+  - &install_dependencies
+    run:
+      name: Install app dependencies
+      command: |
+        yarn install
+  - &save_cache
+    save_cache:
+      name: Save Yarn Package Cache
+      key: yarn-packages-{{ checksum "yarn.lock" }}
+      paths:
+        - ~/.cache/yarn
+  - &build_assets
+    run:
+      name: Build static assets
+      command: |
+        yarn build
+        echo '[Assets Built...]'
+  - &deploy_app
+    run:
+      name: Deploy to 
+      command: |
+        ./node_modules/.bin/firebase deploy --only hosting:mfalade --token "$FIREBASE_TOKEN"
+jobs:
+  build:
+    <<: *bootstrap_instance
+    steps:
+      - checkout
+      - *restore_cache
+      - *install_dependencies
+      - *save_cache
+      - *build_assets
+      - *deploy_app
+
+workflows:
+  version: 2
+  all:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+                - staging
+                - master
